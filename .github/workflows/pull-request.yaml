@@ -1,4 +1,4 @@
-name: Pull Request - Server
+name: Pull Request - App
 
 on:
   pull_request:
