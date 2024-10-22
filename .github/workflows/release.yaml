@@ -1,4 +1,4 @@
-name: Release - Server
+name: Release - App
 
 on:
   workflow_dispatch:
