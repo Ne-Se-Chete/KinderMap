@@ -42,9 +42,6 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.Name) {
 				filter.$filter.contains.Name = entity.Name;
 			}
-			if (entity.City !== undefined) {
-				filter.$filter.equals.City = entity.City;
-			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,
 				filter: filter

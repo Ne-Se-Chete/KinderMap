@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
-  title: Kindergarden Map - OpenAPI 3.0
+  title: Kinder Garden Map Server - OpenAPI 3.0
   version: 1.0.0
-  description: A web application for finding kindergardens
+  description: Kinder Garden Finder Application
 externalDocs:
   description: Find out more about Eclipse Dirigible
   url: https://dirigible.io
@@ -3204,9 +3204,6 @@ components:
           type: string
           minLength: 0
           maxLength: 200
-        City:
-          type: integer
-          format: int32
     NeighborhoodFilterOptions:
       type: object
       properties:
@@ -3235,14 +3232,6 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 200
-                City:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
             notEquals:
               type: object
               properties:
@@ -3265,14 +3254,6 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 200
-                City:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
             contains:
               type: object
               properties:
@@ -3281,7 +3262,6 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 200
-                City:
             greaterThan:
               type: object
               properties:
@@ -3292,9 +3272,6 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 200
-                City:
-                  type: integer
-                  format: int32
             greaterThanOrEqual:
               type: object
               properties:
@@ -3305,9 +3282,6 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 200
-                City:
-                  type: integer
-                  format: int32
             lessThan:
               type: object
               properties:
@@ -3318,9 +3292,6 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 200
-                City:
-                  type: integer
-                  format: int32
             lessThanOrEqual:
               type: object
               properties:
@@ -3331,17 +3302,14 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 200
-                City:
-                  type: integer
-                  format: int32
         $select:
           type: array
-          example: ["Id", "Name", "City"]
+          example: ["Id", "Name"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Name,City"
+            example: "Id,Name"
         $order:
           type: string
           enum: ["asc", "desc"]

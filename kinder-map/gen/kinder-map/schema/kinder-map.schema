@@ -80,11 +80,6 @@
                         "length": 200,
                         "nullable": true,
                         "name": "NEIGHBORHOOD_NAME"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "nullable": true,
-                        "name": "NEIGHBORHOOD_CITY"
                     }
                 ]
             },
@@ -220,15 +215,6 @@
                 "columns": "ADDRESS_STREET",
                 "referencedTable": "STREET",
                 "referencedColumns": "STREET_ID"
-            },
-            {
-                "name": "Neighborhood_City",
-                "type": "foreignKey",
-                "table": "NEIGHBORHOOD",
-                "constraintName": "Neighborhood_City",
-                "columns": "NEIGHBORHOOD_CITY",
-                "referencedTable": "CITY",
-                "referencedColumns": "CITY_ID"
             },
             {
                 "name": "Street_Neighborhood",

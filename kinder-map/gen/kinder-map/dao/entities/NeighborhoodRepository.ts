@@ -6,12 +6,10 @@ import { dao as daoApi } from "sdk/db";
 export interface NeighborhoodEntity {
     readonly Id: number;
     Name?: string;
-    City?: number;
 }
 
 export interface NeighborhoodCreateEntity {
     readonly Name?: string;
-    readonly City?: number;
 }
 
 export interface NeighborhoodUpdateEntity extends NeighborhoodCreateEntity {
@@ -23,37 +21,30 @@ export interface NeighborhoodEntityOptions {
         equals?: {
             Id?: number | number[];
             Name?: string | string[];
-            City?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
             Name?: string | string[];
-            City?: number | number[];
         };
         contains?: {
             Id?: number;
             Name?: string;
-            City?: number;
         };
         greaterThan?: {
             Id?: number;
             Name?: string;
-            City?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
             Name?: string;
-            City?: number;
         };
         lessThan?: {
             Id?: number;
             Name?: string;
-            City?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
             Name?: string;
-            City?: number;
         };
     },
     $select?: (keyof NeighborhoodEntity)[],
@@ -94,11 +85,6 @@ export class NeighborhoodRepository {
                 name: "Name",
                 column: "NEIGHBORHOOD_NAME",
                 type: "VARCHAR",
-            },
-            {
-                name: "City",
-                column: "NEIGHBORHOOD_CITY",
-                type: "INTEGER",
             }
         ]
     };

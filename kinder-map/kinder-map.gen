@@ -1,8 +1,8 @@
 {
-  "brand": "KinderMap",
-  "brandUrl": "https://github.com/TIVMOF/KinderMap",
-  "title": "Kindergarden Map",
-  "description": "A web application for finding kindergardens",
+  "brand": "Ne-Se-Chete",
+  "brandUrl": "https://github.com/Ne-Se-Chete",
+  "title": "Kinder Garden Map Server",
+  "description": "Kinder Garden Finder Application",
   "projectName": "kinder-map",
   "workspaceName": "workspace",
   "filePath": "kinder-map.model",
@@ -26,16 +26,6 @@
       "label": "entities",
       "order": "100",
       "icon": "/services/web/resources/unicons/copy.svg",
-      "role": ""
-    },
-    "Cities": {
-      "views": [
-        "City"
-      ],
-      "name": "Cities",
-      "label": "Cities",
-      "order": "100",
-      "icon": "/services/web/resources/unicons/building.svg",
       "role": ""
     }
   },
@@ -349,31 +339,6 @@
           "minLength": 0,
           "maxLength": 200,
           "inputRule": ""
-        },
-        {
-          "dataName": "NEIGHBORHOOD_CITY",
-          "dataNullable": true,
-          "dataType": "INTEGER",
-          "name": "City",
-          "widgetIsMajor": true,
-          "widgetLength": "20",
-          "widgetSize": "",
-          "widgetType": "TEXTBOX",
-          "relationshipName": "Neighborhood_City",
-          "relationshipEntityName": "City",
-          "relationshipEntityPerspectiveName": "Cities",
-          "relationshipEntityPerspectiveLabel": "Cities",
-          "dataNotNull": false,
-          "dataAutoIncrement": false,
-          "dataPrimaryKey": false,
-          "dataUnique": false,
-          "isRequiredProperty": false,
-          "isCalculatedProperty": false,
-          "widgetLabel": "City",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
-          "inputRule": ""
         }
       ],
       "caption": "Manage entity Neighborhood",
@@ -397,13 +362,7 @@
       "tooltip": "Neighborhood",
       "type": "PRIMARY",
       "dataSource": "DefaultDB",
-      "referencedProjections": [
-        {
-          "name": "City",
-          "project": "codbex-cities",
-          "genFolderName": "codbex-cities"
-        }
-      ],
+      "referencedProjections": [],
       "primaryKeys": [
         "Id"
       ],
@@ -508,110 +467,6 @@
         "Id"
       ],
       "primaryKeysString": "Id"
-    },
-    {
-      "properties": [
-        {
-          "dataAutoIncrement": true,
-          "dataName": "CITY_ID",
-          "dataNullable": true,
-          "dataPrimaryKey": true,
-          "dataType": "INTEGER",
-          "name": "Id",
-          "widgetIsMajor": true,
-          "widgetLength": "20",
-          "widgetSize": "",
-          "widgetType": "TEXTBOX",
-          "dataNotNull": false,
-          "dataUnique": false,
-          "isRequiredProperty": false,
-          "isCalculatedProperty": false,
-          "widgetLabel": "Id",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
-          "inputRule": ""
-        },
-        {
-          "dataLength": "100",
-          "dataName": "CITY_NAME",
-          "dataNullable": true,
-          "dataType": "VARCHAR",
-          "isRequiredProperty": true,
-          "name": "Name",
-          "widgetIsMajor": true,
-          "widgetLength": "100",
-          "widgetSize": "",
-          "widgetType": "TEXTBOX",
-          "dataNotNull": false,
-          "dataAutoIncrement": false,
-          "dataPrimaryKey": false,
-          "dataUnique": false,
-          "isCalculatedProperty": false,
-          "widgetLabel": "Name",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
-          "minLength": 0,
-          "maxLength": 100,
-          "inputRule": ""
-        },
-        {
-          "dataName": "CITY_COUNTRY",
-          "dataNullable": true,
-          "dataType": "INTEGER",
-          "isRequiredProperty": true,
-          "name": "Country",
-          "relationshipEntityPerspectiveLabel": "Entities",
-          "relationshipEntityPerspectiveName": "Countries",
-          "relationshipName": "City_Country",
-          "widgetDropDownKey": "Id",
-          "widgetDropDownValue": "Name",
-          "widgetIsMajor": true,
-          "widgetLength": "20",
-          "widgetSize": "",
-          "widgetType": "DROPDOWN",
-          "dataNotNull": false,
-          "dataAutoIncrement": false,
-          "dataPrimaryKey": false,
-          "dataUnique": false,
-          "isCalculatedProperty": false,
-          "widgetLabel": "Country",
-          "widgetDropdownUrl": "/services/ts/kinder-map/gen/kinder-map/api/Countries/undefinedService.ts",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
-          "inputRule": ""
-        }
-      ],
-      "caption": "Manage entity City",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CITY\"",
-      "dataName": "CITY",
-      "dataQuery": "",
-      "generateReport": "false",
-      "icon": "/services/web/resources/unicons/file.svg",
-      "layoutType": "MANAGE",
-      "menuIndex": "100",
-      "menuKey": "city",
-      "menuLabel": "City",
-      "name": "City",
-      "navigationPath": "/Home",
-      "perspectiveIcon": "/services/web/resources/unicons/building.svg",
-      "perspectiveLabel": "Cities",
-      "perspectiveName": "Cities",
-      "perspectiveOrder": "100",
-      "perspectiveRole": "",
-      "projectionReferencedEntity": "City",
-      "projectionReferencedModel": "/workspace/codbex-cities/codbex-cities.model",
-      "title": "City",
-      "tooltip": "City",
-      "type": "PROJECTION",
-      "dataSource": "DefaultDB",
-      "referencedProjections": [],
-      "primaryKeys": [
-        "Id"
-      ],
-      "primaryKeysString": "Id",
-      "hasDropdowns": true
     },
     {
       "properties": [
