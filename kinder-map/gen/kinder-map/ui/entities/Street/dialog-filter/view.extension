@@ -1,0 +1,5 @@
+{
+    "module": "kinder-map/gen/kinder-map/ui/entities/Street/dialog-filter/view.js",
+    "extensionPoint": "kinder-map-dialog-window",
+    "description": "kinder-map - Application Dialog Window"
+}

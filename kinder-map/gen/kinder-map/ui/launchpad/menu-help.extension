@@ -1,0 +1,5 @@
+{
+    "module": "kinder-map/gen/kinder-map/ui/launchpad/menu-help.js",
+    "extensionPoint": "kinder-map-menu",
+    "description": "kinder-map - Application Menu"
+}

@@ -1,0 +1,5 @@
+{
+    "module": "kinder-map/gen/kinder-map/ui/launchpad/Home/view.js",
+    "extensionPoint": "kinder-map-view",
+    "description": "kinder-map - Application View"
+}

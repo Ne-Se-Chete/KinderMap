@@ -1,0 +1,272 @@
+{
+    "schema": {
+        "structures": [
+            {
+                "name": "KINDERGARDENS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "KINDERGARDENS_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 100,
+                        "nullable": true,
+                        "name": "KINDERGARDENS_NAME"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "KINDERGARDENS_ADDRESS"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "KINDERGARDENS_CAPACITY"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "KINDERGARDENS_KINDERGARTNERS"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "nullable": true,
+                        "name": "KINDERGARDENS_PROPERTY6"
+                    }
+                ]
+            },
+            {
+                "name": "ADDRESS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "ADDRESS_ID"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "ADDRESS_STREETNUMBER"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "ADDRESS_STREET"
+                    }
+                ]
+            },
+            {
+                "name": "NEIGHBORHOOD",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "NEIGHBORHOOD_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 200,
+                        "nullable": true,
+                        "name": "NEIGHBORHOOD_NAME"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "NEIGHBORHOOD_CITY"
+                    }
+                ]
+            },
+            {
+                "name": "STREET",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "STREET_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 200,
+                        "nullable": true,
+                        "name": "STREET_NAME"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "STREET_NEIGHBORHOOD"
+                    }
+                ]
+            },
+            {
+                "name": "CRITERIA",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "CRITERIA_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 200,
+                        "nullable": true,
+                        "name": "CRITERIA_NAME"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 500,
+                        "nullable": true,
+                        "name": "CRITERIA_DISCRIPTION"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "CRITERIA_POINTS"
+                    }
+                ]
+            },
+            {
+                "name": "GARDENCRITERIA",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "GARDENCRITERIA_ID"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "GARDENCRITERIA_CRITERIA"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "GARDENCRITERIA_KINDERGARDEN"
+                    }
+                ]
+            },
+            {
+                "name": "ACCEPTANCERATE",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "ACCEPTANCERATE_ID"
+                    },
+                    {
+                        "type": "DATE",
+                        "nullable": true,
+                        "name": "ACCEPTANCERATE_DATE"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "ACCEPTANCERATE_KINDERGARDEN"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "ACCEPTANCERATE_CAPACITY"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "ACCEPTANCERATE_APPLIEDCHILDREN"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "ACCEPTANCERATE_ACCEPTEDCHILDREN"
+                    }
+                ]
+            },
+            {
+                "name": "KinderGarden_Address",
+                "type": "foreignKey",
+                "table": "KINDERGARDENS",
+                "constraintName": "KinderGarden_Address",
+                "columns": "KINDERGARDENS_ADDRESS",
+                "referencedTable": "ADDRESS",
+                "referencedColumns": "ADDRESS_ID"
+            },
+            {
+                "name": "Address_Street",
+                "type": "foreignKey",
+                "table": "ADDRESS",
+                "constraintName": "Address_Street",
+                "columns": "ADDRESS_STREET",
+                "referencedTable": "STREET",
+                "referencedColumns": "STREET_ID"
+            },
+            {
+                "name": "Neighborhood_City",
+                "type": "foreignKey",
+                "table": "NEIGHBORHOOD",
+                "constraintName": "Neighborhood_City",
+                "columns": "NEIGHBORHOOD_CITY",
+                "referencedTable": "CITY",
+                "referencedColumns": "CITY_ID"
+            },
+            {
+                "name": "Street_Neighborhood",
+                "type": "foreignKey",
+                "table": "STREET",
+                "constraintName": "Street_Neighborhood",
+                "columns": "STREET_NEIGHBORHOOD",
+                "referencedTable": "NEIGHBORHOOD",
+                "referencedColumns": "NEIGHBORHOOD_ID"
+            },
+            {
+                "name": "GardenCriteria_Criteria",
+                "type": "foreignKey",
+                "table": "GARDENCRITERIA",
+                "constraintName": "GardenCriteria_Criteria",
+                "columns": "GARDENCRITERIA_CRITERIA",
+                "referencedTable": "CRITERIA",
+                "referencedColumns": "CRITERIA_ID"
+            },
+            {
+                "name": "GardenCriteria_KinderGarden",
+                "type": "foreignKey",
+                "table": "GARDENCRITERIA",
+                "constraintName": "GardenCriteria_KinderGarden",
+                "columns": "GARDENCRITERIA_KINDERGARDEN",
+                "referencedTable": "KINDERGARDENS",
+                "referencedColumns": "KINDERGARDENS_ID"
+            },
+            {
+                "name": "AcceptanceRate_KinderGarden",
+                "type": "foreignKey",
+                "table": "ACCEPTANCERATE",
+                "constraintName": "AcceptanceRate_KinderGarden",
+                "columns": "ACCEPTANCERATE_KINDERGARDEN",
+                "referencedTable": "KINDERGARDENS",
+                "referencedColumns": "KINDERGARDENS_ID"
+            }
+        ]
+    },
+    "datasource": "DefaultDB"
+}
